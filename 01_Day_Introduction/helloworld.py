@@ -1,7 +1,11 @@
+
 # Introduction
 # Day 1 - 30DaysOfPython Challenge
 
 from ensurepip import version
+from logging import root
+import math
+from turtle import distance
 
 
 print(2 + 3)   # addition(+)
@@ -34,6 +38,8 @@ print(type((9.8, "abc", 0 +3j))) # we can see here that we have a mixed data typ
 
 # day  1 exercises
 
+
+#---------------------------------------------------------------- LEVEL 1
 
 #------------Exc1--------------
 
@@ -92,3 +98,46 @@ print(type("Ana"))
 print(type("Lima"))
 # Your country
 print(type("Portugal"))
+
+#---------------------------------------------------------------- LEVEL 2
+
+# Exercise: Level 2- Done
+# Create a folder named day_1 inside 30DaysOfPython folder. Inside day_1 folder,
+# create a python file helloworld.py and repeat questions 1, 2, 3 and 4.
+# Remember to use print() when you are working on a python file.
+# Navigate to the directory where you have saved your file, and run it.
+
+#---------------------------------------------------------------- LEVEL 3
+
+# Exercise: Level 3
+# Write an example for different Python data types such as Number(Integer, Float, Complex), String, Boolean, List, Tuple, Set and Dictionary.
+# Find an Euclidian distance between (2, 3) and (10, 8)
+
+# Number 
+
+my_integer= 30 
+print(type(my_integer))
+
+my_float = 35.75
+print(type(my_float))
+
+my_complex = 2 +5j
+print (type(my_complex))
+
+#sring
+my_String = "Hello, I am Ana! Nice to meet you."
+
+# boolean
+
+Ana_likesPizza = False
+my_Boolean = print(bool(Ana_likesPizza))  # here I am computing the bool of False 
+
+# Euclidian distance
+
+a = (2,3)
+b = (10,8)
+
+distance = math.sqrt((10 - 2)**2 + (8 - 3)**2)
+print(distance)
+
+
