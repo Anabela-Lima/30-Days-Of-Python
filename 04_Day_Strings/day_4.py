@@ -70,11 +70,11 @@ last_three = language[-3:]
 print(last_three)   # hon
 last_three = language[3:]
 print(last_three)   # hon
-
-# Skipping character while splitting Python strings
+# file splitting Python strings
 language = 'Python'
-pto = language[0:6:2] # 
+pto = language[0:6:2] # this means from 0,6 (6 doesnt count so basically from start to finish of word python) in steps 2 apply slice - P Y/ T H/ O N/ , left over = PTO 
 print(pto) # pto
+
 
 # Escape sequence
 print('I hope every one enjoying the python challenge.\nDo you ?') # line break
@@ -117,6 +117,13 @@ challenge = 'thirty days of python'
 print(challenge.find('y'))  # 5
 print(challenge.find('th')) # 0
 
+
+# rfind(): Returns the index of the last occurrence of a substring, if not found returns -1
+
+challenge = 'thirty days of python'
+print(challenge.rfind('y'))  # 16
+print(challenge.rfind('th')) # 17
+
 # format()	formats string into nicer output    
 first_name = 'Asabeneh'
 last_name = 'Yetayeh'
@@ -131,12 +138,12 @@ area = pi # radius ## 2
 result = 'The area of circle with {} is {}'.format(str(radius), str(area))
 print(result) # The area of circle with 10 is 314.0
 
-# index(): Returns the index of substring
+# index(): Returns the index of substring (index of input argument )
 challenge = 'thirty days of python'
 print(challenge.find('y'))  # 5
 print(challenge.find('th')) # 0
 
-# isalnum(): Checks alphanumeric character
+# isalnum(): Checks alphanumeric character- Alphanumeric means a character is either a letter or a number Note: for something say a string to be alphanumeric it cannot contain spaces !!
 
 challenge = 'ThirtyDaysPython'
 print(challenge.isalnum()) # True
@@ -145,16 +152,16 @@ challenge = '30DaysPython'
 print(challenge.isalnum()) # True
 
 challenge = 'thirty days of python'
-print(challenge.isalnum()) # False
+print(challenge.isalnum()) # False - spaces are not alphanumeric 
 
 challenge = 'thirty days of python 2019'
 print(challenge.isalnum()) # False
 
-# isalpha(): Checks if all characters are alphabets
+# isalpha(): Checks if all characters are alphabet characters (a-z or A-Z)
 
 challenge = 'thirty days of python'
-print(challenge.isalpha()) # True
-num = '123'
+print(challenge.isalpha()) # False because space is not an alpha character 
+num = '123' # False because numbers are not alpha 
 print(num.isalpha())      # False
 
 # isdecimal(): Checks Decimal Characters
@@ -181,7 +188,7 @@ print(num.isdecimal()) # False
 # isidentifier():Checks for valid identifier means it check if a string is a valid variable name
 
 challenge = '30DaysOfPython'
-print(challenge.isidentifier()) # False, because it starts with a number
+print(challenge.isidentifier()) # False, because it starts with a number- variables cant start with numbers 
 challenge = 'thirty_days_of_python'
 print(challenge.isidentifier()) # True
 
@@ -213,30 +220,41 @@ web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
 result = '#, '.join(web_tech)
 print(result) # 'HTML# CSS# JavaScript# React'
 
-# strip(): Removes both leading and trailing characters
+# strip(): Removes all given characters starting from the beginning and end of the string
 
-challenge = ' thirty days of python '
-print(challenge.strip('y')) # 5
+challenge = 'thirty days of pythoonnn'
+print(challenge.strip('noth')) # 'irty days of py'   so it removed all n, o t and h from both start and ending
 
-# replace(): Replaces substring inside
+
+# replace(): Replaces substring with a given string
 
 challenge = 'thirty days of python'
 print(challenge.replace('python', 'coding')) # 'thirty days of coding'
 
-# split():Splits String from Left
-
+# split(): Splits the string, using given string or space as a separator
 challenge = 'thirty days of python'
-print(challenge.split()) # ['thirty', 'days', 'of', 'python']
+print(challenge.split()) # ['thirty', 'days', 'of', 'python']  # so every space will be a new string- so if i use split(hi) wghever there is a hi in challenge will be a new substring
+
+challenge = 'thiry days of python'
+print(challenge.split("hi"))
+
+# 't/[hi]/ry days of python' = ['t', 'ry days of python']
+# output : ['t', 'rty days of python']  
+
+
+challenge = 'thirty, days, of, python'
+print(challenge.split(', ')) # ['thirty', 'days', 'of', 'python']
 
 # title(): Returns a Title Cased String
 
 challenge = 'thirty days of python'
 print(challenge.title()) # Thirty Days Of Python
 
-# swapcase(): Checks if String Starts with the Specified String
+# swapcase(): Converts all uppercase characters to lowercase and all lowercase characters to uppercase characters
   
 challenge = 'thirty days of python'
 print(challenge.swapcase())   # THIRTY DAYS OF PYTHON
+
 challenge = 'Thirty Days Of Python'
 print(challenge.swapcase())  # tHIRTY dAYS oF pYTHON
 
@@ -246,3 +264,4 @@ challenge = 'thirty days of python'
 print(challenge.startswith('thirty')) # True
 challenge = '30 days of python'
 print(challenge.startswith('thirty')) # False
+
