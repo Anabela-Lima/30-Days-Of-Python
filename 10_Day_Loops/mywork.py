@@ -3086,20 +3086,12 @@ print( "\n Next question \n:")
 # What are the total number of languages in the data
 
 # have an empty array called languages_array
-languages_array = []
-#  loop through the array  
-
-
-# print(data[0])
-
-# for key in (data[0]):
-#   if key == "languages":
-#    print(data[0].values())
 
 languages_list = []                                  # have an empty array
 
 for object in data:                                  # we know its an object because thats whats inside the data  {} objects or "dictionaries"
      languages_list.extend(object["languages"])      # extend will take the items and insert it to the array whereas append,
+
 
 # will just take it in whatever format and put it inside the array, so it could have you could end up with a list inside a list, which is not 
 # what I want because I want to be able to convert it to a set afterwards in order to count unique languages, rather than total langauges.
