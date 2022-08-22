@@ -86,22 +86,4 @@ average = (total_spent/total_quantity)
 print("Average price spent on oranges and apples is: £",'{:.2f}'.format(average))    # '{:.2f}'.format(x) to convert to 2 dp only
 
 
-#--------------- Next Question --------------------------
-
-
-print("\nNext Exercise:\n")
-
-vegetables = [
-    {
-        "item": "apple",
-        "quantity": 5,
-        "price": 0.95
-    },
-    {
-        "item": "orange",
-        "quantity": 7,
-        "price": 0.99
-    }
-]
-
 
