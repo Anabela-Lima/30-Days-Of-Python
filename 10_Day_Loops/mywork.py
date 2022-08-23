@@ -3,7 +3,7 @@
 #Iterate 0 to 10 using for loop, do the same using while loop.
 
 from collections import Counter
-from unicodedata import name
+
 
 for i in range(10):
    print( i)

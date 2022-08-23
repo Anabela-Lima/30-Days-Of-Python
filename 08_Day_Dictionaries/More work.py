@@ -57,7 +57,6 @@ for object in fruits:
 print("total of apples and oranges: £", total_apples_Oranges)
    
 
-
 print(" ")
 
 # How would we determine the average price spent per item?

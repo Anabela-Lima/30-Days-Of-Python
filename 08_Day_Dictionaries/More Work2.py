@@ -312,7 +312,6 @@ maxAndMin2(letters_num_Dic2)
 print('\n -----------Question 15 ------------:\n')                                                             # Max and minimum Values  
 
 
-
 class Person:                               # we have Person class
   def __init__(self, fname,age,gender):     # we use def to define a user defined function, every class has a function that coems with it
                                             # that gives us details of how object of this class (the instance) type should be constructed- init initializes the attributes of the class
