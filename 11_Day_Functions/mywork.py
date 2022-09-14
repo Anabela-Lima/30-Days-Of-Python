@@ -336,6 +336,7 @@ def _isListUnique(user_list):
 
     i = 0
     unique_counter = 0
+    list_length = len(user_list)
     for item in range(len(user_list)):
       print("\n i=", i, "- " "user list before removing: \n", user_list)
       remove_item = user_list[i]
@@ -343,12 +344,19 @@ def _isListUnique(user_list):
       print("item to be removed:", remove_item)
       user_list.pop(i)
       print("user list after removing", user_list)
-      item_in_list = remove_item in user_list
-      print("item:",remove_item, "in list? : ", item_in_list)
+      _is_item_in_list = remove_item in user_list
+      print("item:",remove_item, "in list? : ", _is_item_in_list)
 
-      if not item_in_list:
+      if not _is_item_in_list:
         unique_counter +=1
         print("unique")
+      
+      print(unique_counter)
+
+    
+    if unique_counter == list_length:
+        print("This list totally unique")
+    else: print("The list is not unique")
 
          
 
@@ -356,13 +364,8 @@ def _isListUnique(user_list):
     
       
 
-      
 
-  
-        
-
-
-_isListUnique([1,2,3,1,4,5])
+_isListUnique([0,1,2,3,4,5,6,7,7])
 
 
 
