@@ -1,5 +1,8 @@
 #https://www.w3resource.com/python-exercises/dictionary/
 
+from collections import Counter
+from multiprocessing.connection import deliver_challenge
+
 # 1. Write a Python script to sort (ascending and descending) a dictionary by value                                    # Sorting by keys and values (Ascendig + Descending) dictionary
 
 
@@ -309,11 +312,11 @@ letters_num_Dic2= {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
 maxAndMin2(letters_num_Dic2)
 
 
-print('\n -----------Question 15 ------------:\n')                                                             # Max and minimum Values  
+print('\n -----------Question 15 ------------:\n')                                                             # create dictionary from an object's fields
 
-
+# Write a Python program to get a dictionary from an object's fields.
 class Person:                               # we have Person class
-  def __init__(self, fname,age,gender):     # we use def to define a user defined function, every class has a function that coems with it
+  def __init__(self, fname,age,gender):     # we use def to define a user defined function, every class has a function that comes with it
                                             # that gives us details of how object of this class (the instance) type should be constructed- init initializes the attributes of the class
                                             # the self, is reference to the current instance of the class-it is the reference object of the class
                                             # __init__ takes self; the reference object of the class (the object) and populates it with the attributes e.g. fname
@@ -334,3 +337,111 @@ x = Student("Ana", 18, "female")             # we have a student object stored i
 x.printPersonDetails()          
 
 
+
+
+print('\n -----------Question 16 ------------:\n')                                                             # function to remove duplicates from dictionary  
+
+# Write a Python program to remove duplicates from Dictionary
+
+letters_num_Dic3= {'a': 9, 'b': 3, 'b': 3, 'd': 4, 'e': 8} 
+
+
+def removeDuplicates(dic):
+
+    no_duplicates ={}
+    for key, value in dic.items():
+        if value not in no_duplicates:
+            no_duplicates[key] = value
+        else: print(" The key value pair already exists!")   
+
+    print("No duplicates dictionary:", no_duplicates)
+
+
+
+removeDuplicates(letters_num_Dic3)
+
+
+
+
+print('\n -----------Question : My own ------------:\n')                                                             # function to remove duplicates from dictionary  
+
+
+# Create a python script that computes the number of times a value occurs in a given dictionary 
+
+def countValueFrequency(dic):
+     print("original dictionary:", dic)
+     print("dicitonary values:", dic.values())
+
+     count = {}
+     for x in dic.values():
+         print("count",count)
+
+         if x in count:              # if x is already inside the dictionary
+             count[x] += 1           # x key value its value increases by 1 
+         else:count[x] = 1           # otherwise, x key takes value 1
+
+     print( "value frequency:" ,count)
+  
+     xcount_dictionary = count
+    
+     for key in xcount_dictionary:
+         # print(xcount_dictionary[key])
+         if xcount_dictionary[key] >1 :
+             print(key ,"appears more than once")
+          
+
+
+# using the function:
+
+
+letters_num_Dic4= {'a': 9, 'b': 3, 'c': 3, 'd': 3, 'e': 8} 
+countValueFrequency(letters_num_Dic4)
+
+
+
+
+print('\n -----------Question : 17 ------------:\n')                                                             # check dictionary is empty or not 
+
+# Write a Python program to check a dictionary is empty or not.
+
+
+def dicEmpty(dic):
+    if dic == {}:
+        print("dictionary is empty")
+    else: print("ditionary is not empty:", dic)    
+
+
+
+# using function
+
+the_colours = {'red':5, 'pink':4,'yellow':4,'brown':2,'green':3, 'black':1,'blue':2 }
+
+colours_empty = {}
+
+dicEmpty(the_colours)
+dicEmpty(colours_empty)
+
+
+
+'''
+
+bool(dic) checks whether its populated or not 
+bool(empty dic) - False- not populated
+bool(populated dic)- True- dic is populated
+
+not bool == "not populated"
+
+
+so we could also do:
+
+ if not bool(the_colours):                              will not print because its populated 
+    print("the dictionary is empty)
+
+'''
+
+
+
+print('\n -----------Question : 18 ------------:\n')                                                             # check dictionary is empty or not 
+
+
+#  Write a Python program to combine two dictionary adding values for common keys
