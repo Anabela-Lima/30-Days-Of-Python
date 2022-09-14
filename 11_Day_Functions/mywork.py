@@ -3,6 +3,7 @@
 
 import math
 from operator import indexOf
+from os import remove
 
 
 def mySum(num1,num2):
@@ -334,13 +335,27 @@ print("")
 def _isListUnique(user_list):
 
     i = 0
+    unique_counter = 0
     for item in range(len(user_list)):
       print("\n i=", i, "- " "user list before removing: \n", user_list)
-  
-      print("item at index:", i, "=" , user_list[i])
-      print("item to be removed:", user_list[i])
+      remove_item = user_list[i]
+      print("item at index:", i, "=" , remove_item)
+      print("item to be removed:", remove_item)
       user_list.pop(i)
       print("user list after removing", user_list)
+      item_in_list = remove_item in user_list
+      print("item:",remove_item, "in list? : ", item_in_list)
+
+      if not item_in_list:
+        unique_counter +=1
+        print("unique")
+
+         
+
+
+    
+      
+
       
 
   
