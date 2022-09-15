@@ -456,3 +456,22 @@ most_spoken_languages()                                                         
 
 
 
+def most_populated_countries():
+
+    populations ={}                                                                       # for example:   dog= {}
+
+    for object in languages.data:                                                         # for some object in variable data
+        
+        # x = {}
+        # x['']                     =  'y'
+        populations[object['name']] =  object['population']                               # getting name property and assigning it to its population value
+
+    sortedByValueDesc = list({k:v for k,v in sorted(populations.items(), key = lambda v:v[1], reverse = True)})
+    print("Sorted by value descending:", sortedByValueDesc[0:10])
+
+
+most_populated_countries()
+
+
+
+
