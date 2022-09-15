@@ -334,83 +334,104 @@ print("")
 
 def _isListUnique(user_list):
 
-    i = 0
-    unique_counter = 0
-    list_length = len(user_list)
-    for item in range(len(user_list)):
-      print("\n i=", i, "- " "user list before removing: \n", user_list)
-      remove_item = user_list[i]
-      print("item at index:", i, "=" , remove_item)
-      print("item to be removed:", remove_item)
-      user_list.pop(i)
-      print("user list after removing", user_list)
-      _is_item_in_list = remove_item in user_list
-      print("item:",remove_item, "in list? : ", _is_item_in_list)
+     i = 0
+     unique_counter = 0
+     list_length = len(user_list)
 
-      if not _is_item_in_list:
-        unique_counter +=1
-        print("unique")
+     for item in range(len(user_list)):
+       print("\n i=", i, "- " "user list before removing: \n", user_list)
+       remove_item = user_list[i]
+       print("item at index:", i, "=" , remove_item)
+       print("item to be removed:", remove_item)
+       user_list.pop(i)
+       print("user list after removing", user_list)
+       _is_item_in_list = remove_item in user_list
+       print("item:",remove_item, "in list? : ", _is_item_in_list)
+
+       if not _is_item_in_list:
+         unique_counter +=1
+         print("unique")
       
-      print(unique_counter)
+       print(unique_counter)
 
     
-    if unique_counter == list_length:
-        print("This list totally unique")
-    else: print("The list is not unique")
+     if unique_counter == list_length:
+         print("This list is totally unique")
+     else: print("The list is not unique")
 
          
+_isListUnique(["a","b","c","c"])
 
 
-    
-      
+# solution 2 
+
+def _isListUnique2(user_list):
+    dict = {}
+    for letter in user_list:
+        if letter in dict:
+            return "List does not only contain unique elements."
+        else:
+            dict[letter] = 1
+
+    return "List contains only unique elements."
+
+print(_isListUnique2(["a","b","c","c"]))
 
 
-_isListUnique([0,1,2,3,4,5,6,7,7])
+# solution 3
 
+def _isListUnique3(user_list):
+    return len(set(user_list)) == len(user_list)
 
+print(_isListUnique3(["a","b","c","c"]))
 
-
-
-
-
-# def checkItem (a_lst):
-
-#     an_array = []
-
-#     for itm in a_lst:
-#         print("array before:", an_array)
-#         if itm in an_array: 
-#             print("List is not unique", itm, "is in there already!")
-                
-#         else: an_array.append(itm) 
-#         print("the item added", itm)
-    
-
-#     i = an_array[y]
-#     y = 0
-
-#     for my_item in an_array:
-#         y += 0
-#         print(my_item)
-     
-#         # if my_item != i:
-#         #     print("list is unique ") 
-        
-
-      
-           
-           
-            
-            
-
-   
-    # print(an_array)
-                
-
-# checkItem(["a","b","c","d"])
 
 # Write a function which checks if all the items of the list are of the same data type.
+
+print(" \n Next Question" )
+
+def _isSameDataType(data_list):
+
+    data_type= type(data_list[0])
+
+    _is_same_data_type = []
+    data_types_in_list = []
+
+    for item in range(len(data_list)):
+        item_type = type(data_list[item])
+        data_types_in_list.append(item_type)
+       
+        print("\n data type for:", item,item_type )
+
+        if item_type is not data_type:
+            print("No")
+            _is_same_data_type.append("No")
+        else: 
+            print("Yes")
+            _is_same_data_type.append("Yes")
+
+    print("data types in list:", data_types_in_list) 
+    print("is it same:", _is_same_data_type) 
+    
+
+    if "No" in _is_same_data_type: 
+        print("List items are not of same datatype")
+    else: print ("List items are of same datatype")    
+
+    
+_isSameDataType([1,"a",True])
+_isSameDataType([1,2,3])
+
+
+
 # Write a function which check if provided variable is a valid python variable
+
+# def _is_valid_variable(my_variable):
+#     if my_variable.isidentifier  
+
+
+
+
 # Go to the data folder and access the countries-data.py file.
 # Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
 # Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
