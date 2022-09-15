@@ -2,8 +2,8 @@
 
 
 import math
-from operator import indexOf
-from os import remove
+import languages
+from collections import Counter
 
 
 def mySum(num1,num2):
@@ -426,14 +426,32 @@ _isSameDataType([1,2,3])
 
 # Write a function which check if provided variable is a valid python variable
 
-# def _is_valid_variable(my_variable):
-#     if my_variable.isidentifier  
-
+def _is_valid_variable(my_variable):
+   x = '{}'.format(my_variable)
+   print( x.isidentifier())
+_is_valid_variable('@')
 
 
 
 # Go to the data folder and access the countries-data.py file.
 # Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
+
+
+# Go to the data folder and use the countries_data.py file.
+
+
+
+def most_spoken_languages():
+    languages_list= []                                                              # empty list of languages
+    for object in languages.data:                                                   # loop through data list in file languages.py and for every object
+      languages_list.extend(object["languages"])                                    # add its langauges to languages_list
+    elements_with_frequency = Counter(languages_list)                               # use Counter to count frequency of each language
+    print("Top 10 languages", elements_with_frequency.most_common(10))              # limit to top 10 (10 highest frequency)
+
+most_spoken_languages()                                                             # call function
+
+
+
 # Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
 
 
