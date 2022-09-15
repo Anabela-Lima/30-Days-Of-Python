@@ -460,13 +460,13 @@ def most_populated_countries():
 
     populations ={}                                                                       # for example:   dog= {}
 
-    for object in languages.data:                                                         # for some object in variable data
+    for object in languages.data:                                                         # for every object in variable data
         
         # x = {}
         # x['']                     =  'y'
         populations[object['name']] =  object['population']                               # getting name property and assigning it to its population value
 
-    sortedByValueDesc = list({k:v for k,v in sorted(populations.items(), key = lambda v:v[1], reverse = True)})
+    sortedByValueDesc = list({k:v for k,v in sorted(populations.items(), key = lambda v:v[1], reverse = True)})     # sort populations.items (k:v) according to second key i.e. the value population, and in reverse order + return that as a list
     print("Sorted by value descending:", sortedByValueDesc[0:10])
 
 
@@ -475,3 +475,10 @@ most_populated_countries()
 
 
 
+'''
+Notes:
+
+Use .append when adding single items 
+Use .extend when attaching a list to another 
+
+'''
