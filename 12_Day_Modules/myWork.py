@@ -154,3 +154,4 @@ def list_of_colors(colour_type, times):
 
      
 list_of_colors("rgb",4)
+#list_of_colors("hexa",3)
