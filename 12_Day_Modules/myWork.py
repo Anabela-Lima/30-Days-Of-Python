@@ -73,7 +73,8 @@ print( "\n Question 2.1\n")
 
  # ['#a3e12f','#03ed55','#eb3d2b'] 
 
- # # + digits 0:15 + letters_lowercase: a-f  )
+ # # + digits 0:9 + letters_lowercase: a-f  )
+
 def list_of_hexa_colors():
     hashtag = '#'
 
@@ -114,7 +115,7 @@ print( "\n Question 2.1 solution 2\n")
 
 def hex_colours():
     colour = "#"
-    
+
     for element in range(6):
         colour+= random.choice((s.hexdigits).lower())
     print(colour)
