@@ -1,4 +1,5 @@
 
+from enum import unique
 import random
 import string as s
 
@@ -101,6 +102,7 @@ def list_of_hexa_colors():
 
     _3_nums.insert(0, hashtag)
 
+
     no_commas = str(_3_nums).replace(',','')
     no_spaces= (no_commas.replace(' ',''))
     no_apos=(no_spaces.replace("'",""))
@@ -155,3 +157,48 @@ def list_of_colors(colour_type, times):
      
 list_of_colors("rgb",4)
 #list_of_colors("hexa",3)
+
+
+#----------------------------------------------------------------------------------------
+
+print( "\n Question 3.1 \n")
+
+# Call your function shuffle_list, it takes a list as a parameter and it returns a shuffled list
+
+def shuffle_list(my_list):
+   random.shuffle(my_list)
+   print(my_list)
+
+shuffle_list([1,2,3,4])
+
+
+
+
+#----------------------------------------------------------------------------------------
+
+print( "\n Question 3.2 \n")
+# Write a function which returns an array of seven random numbers in a range of 0-9. All the numbers must be unique.
+
+def uniqueprint():
+    numbers = (random.sample(range(0,9),7))
+    return(numbers)
+print(uniqueprint())
+
+
+print( "\n Question 3.2b - solution2 \n")
+
+def uniqueprint2():
+    _7_list = []
+    def select():
+        num = int(random.choice(s.digits))
+        if num not in _7_list:
+            _7_list.append(num)
+        else:
+            select()
+
+    for number in range(7):
+        select()
+
+    return _7_list
+
+print(uniqueprint2())
