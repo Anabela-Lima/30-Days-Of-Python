@@ -61,6 +61,7 @@ def rgb_color_gen():
     string_list = [rbg, my_colours_tuple]
     final_rbg = ( "".join(string_list))
     print(final_rbg)
+    return final_rbg
 
 
 rgb_color_gen()
@@ -90,13 +91,13 @@ def list_of_hexa_colors():
     _3_nums= (random.sample(my_nums,3)) 
     _3_letters= (random.sample(my_letters_a_f,3))
 
-    print(_3_nums, _3_letters)
+    print("3 nums:",_3_nums, "3 letters:",_3_letters)
 
     for elements in range(1):
         _3_nums.extend(_3_letters) 
 
     random.shuffle(_3_nums)
-    print(_3_nums)
+    print("shuffled list:", _3_nums)
 
     _3_nums.insert(0, hashtag)
 
@@ -104,7 +105,9 @@ def list_of_hexa_colors():
     no_spaces= (no_commas.replace(' ',''))
     no_apos=(no_spaces.replace("'",""))
     no_open_bracket= (no_apos.replace("[",""))
-    print(no_open_bracket.replace("]",""))
+    final_colour= no_open_bracket.replace("]","")
+    print(final_colour)
+    return final_colour
 
 
 list_of_hexa_colors()
@@ -124,6 +127,30 @@ def hex_colours():
 hex_colours()
 
 
+#----------------------------------------------------------------------------------------
+print( "\n Question 2.2 and 2.3\n")
+
+# Write a function list_of_colors which returns any number of colors in an array.
 
 
+def list_of_colors(colour_type, times):
 
+    hexa_colours_list = ["hexa","hexadecimal","hex"]
+    rgb_colours_list = ["rgb","rgb colour", "rgb color"]
+
+    if colour_type in hexa_colours_list:
+        my_hexa_list= []
+        for colour in range(times):
+         generated_colour = list_of_hexa_colors()
+         my_hexa_list.append(generated_colour)
+        print("hexa list:", my_hexa_list)
+
+    elif colour_type in rgb_colours_list:
+        my_rgb_list = []
+        for colour in range(times):
+            generated_colour= rgb_color_gen()
+            my_rgb_list.append(generated_colour)
+        print("rgb list:", my_rgb_list)
+
+     
+list_of_colors("rgb",4)
